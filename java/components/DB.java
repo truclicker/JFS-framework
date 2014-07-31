@@ -6,18 +6,7 @@ import org.json.JSONArray;
 public class DB {
 
 	Connection conn = null;
-	//String driver = "org.apache.derby.jdbc.EmbeddedDriver";
 	String driver = "com.mysql.jdbc.Driver";
-	//String host = "37.140.192.217";
-	//String login = "u9931156_test10";
-	//String password = "testtest10";
-	String host = "127.0.0.1";
-	//String login = "allonbet";
-      //  String password = "hft4w378th78482";
-        //String login = "sillaru2";
-        //String password = "silla321";
-    String login = "root";
-    String password = "";
 	Statement s = null;
 	ResultSet rs = null;
 	ResultSetMetaData md = null;
@@ -27,11 +16,11 @@ public class DB {
 		
 			Class.forName(driver).newInstance();
 			Properties properties= new Properties();
-			properties.setProperty("user", login);
-			properties.setProperty("password", password);
+			properties.setProperty("user", Config.login);
+			properties.setProperty("password", Config.password);
 			properties.setProperty("useUnicode","true");
 			properties.setProperty("characterEncoding","UTF-8");
-			conn = DriverManager.getConnection("jdbc:mysql://" + host + "/" + db, properties);
+			conn = DriverManager.getConnection("jdbc:mysql://" + Config.host + "/" + Config.db, properties);
 			s = conn.createStatement();
 			PreparedStatement stmt = null;
 			stmt = conn.prepareStatement("ALTER DATABASE " + Config.dbName + " CHARACTER SET 'utf8'");
@@ -66,7 +55,7 @@ public class DB {
 				JSONArray rows = new JSONArray();
 				PreparedStatement stmt = null;
 				try {
-					stmt = conn.prepareStatement("SELECT * FROM sillaru_users WHERE login = ? AND password = ?");
+					stmt = conn.prepareStatement("SELECT * FROM users WHERE login = ? AND password = ?");
 					stmt.setString(1, login);
 					stmt.setString(2, password);
 					rs = stmt.executeQuery();

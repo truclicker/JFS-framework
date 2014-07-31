@@ -7,7 +7,6 @@ import java.util.TimerTask;
 public class Starter implements Runnable {
 
 	public Boolean isPolicy;
-	//public static String ip = "194.58.88.95";
         public static String ip = "127.0.0.1";
 	public static int port = 255;
 	public static int policyPort = 843;

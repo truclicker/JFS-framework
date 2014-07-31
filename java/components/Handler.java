@@ -61,7 +61,7 @@ public class Handler{
                     if(!alreadyExist)
                     {
                         client.id = user_id;
-						JSONObject user = Data.db.executeQuery("SELECT * FROM sillaru_users WHERE id = " + user_id, true);
+						JSONObject user = Data.db.executeQuery("SELECT * FROM users WHERE id = " + user_id, true);
 						Data.db.executeUpdate("UPDATE sillaru_users SET online = 1 WHERE id = " + user_id); 
 						params.put("users", Data.users);
 						params.put(user);

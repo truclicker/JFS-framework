@@ -83,7 +83,7 @@ public class Client implements Runnable {
 						Object t = c.getConstructor(JSONObject.class, Client.class, Data.class).newInstance(handler, this, data);
 						m.invoke(t);
 					}
-					Thread.sleep(100); // Задержка перед тем как отправить(delay before send answer)
+					Thread.sleep(100); // delay before sending
 					data.sendHandlers(this);
 			}
 			else
