@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 54
+build.properties
+
+build.xml
+
+.settings
+
+.project
+
+zip
+
+END

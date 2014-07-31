@@ -1,0 +1,53 @@
+8
+
+dir
+34
+https://olog.googlecode.com/svn/trunk
+https://olog.googlecode.com/svn
+
+
+
+2010-12-02T11:26:00.827217Z
+34
+oyvind.nordhagen
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+41bbbf82-2a60-11df-8288-31e8ecb78f5f
+
+OlogVersionHistory.xml
+file
+38
+
+
+
+2010-12-20T23:35:51.000000Z
+ada31f9343f20b64b9998900f0beb79c
+2010-12-20T23:44:28.914160Z
+38
+oyvind.nordhagen
+has-props
+
+docs
+dir
+
+examples
+dir
+
+src
+dir
+
+swc
+dir
+

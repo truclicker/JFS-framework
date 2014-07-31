@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application 
+    xmlns:fx="http://ns.adobe.com/mxml/2009"    
+    xmlns:mx="library://ns.adobe.com/flex/mx"     
+    xmlns:s="library://ns.adobe.com/flex/spark"
+	applicationComplete="onAppCompleted();">
+
+    <s:layout> 
+        <s:BasicLayout/> 
+    </s:layout>
+
+	
+	<fx:Script>
+        <![CDATA[
+			
+			public cusSock:CustomSocket;
+			public data:Data = new Data();
+			private function onAppCompleted():void {
+			
+				cusSock = new CustomSocket('127.0.0.1', 255, this);
+				this.data = cusSock.data;
+			}
+			
+			
+        ]]>
+    </fx:Script>
+	
+		<mx:VBox>
+			<s:Label text="test" />
+		</mx:VBox>
+</s:Application>
