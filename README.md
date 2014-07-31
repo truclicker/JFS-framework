@@ -11,6 +11,20 @@ JSONObject user = Data.db.executeQuery("SELECT * FROM users WHERE id = " + user_
 
 JSONArray users = Data.db.executeQuery("SELECT * FROM users", false).getJSONArray("rows");
 
+usage:
+
+user.getInt("id");
+user.getString("login");
+
+looping users:
+
+for(int i = 0 ; i < users.length(); i++)
+{
+
+   //JSONObject user = users.getJSONObject(i);
+
+}
+
 the first parameter is the query
 the second parameter is boolean, return a row(true) or return rows(false)
 
