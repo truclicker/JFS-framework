@@ -5,7 +5,9 @@ Java-flash-socket-based-framework-with-mysql
 
 This framework allows you to quickly create a java-flash application using sockets and mysql database
 
-this framework assumes you have java and actionscript or flex knowlegde in order to use it
+this framework assumes you have java and actionscript or flex knowlegde in order to use 
+
+Notice: here We have a simple example on how to get some data after the user connects, you can add your own handlers on what data you need, you can add handlers on some events to avoid ping-pong data sending, its pretty simple to use, you don't have to worry about how the connections works or how to handle the policy, or how to handle the multiThreaded java, you only need to setup your database, ping, and handlers(in both actionscript and java) and it will work as a charm
 
 to query a row from database use this in java:
 
