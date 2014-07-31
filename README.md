@@ -5,6 +5,8 @@ Java-flash-socket-based-framework-with-mysql
 
 This framework allows you to quickly create a java-flash application using sockets and mysql database
 
+this framework assumes you have java and actionscript or flex knowlegde in order to use it
+
 to query a row from database use this in java:
 
 JSONObject user = Data.db.executeQuery("SELECT * FROM users WHERE id = " + user_id, true);
