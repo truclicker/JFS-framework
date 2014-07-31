@@ -1,4 +1,4 @@
-JF-framework
+JFS-framework
 ============
 
 Java-flash-socket-based-framework-with-mysql
