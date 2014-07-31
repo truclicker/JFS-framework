@@ -93,6 +93,60 @@ so after the connection, the connect function is executed in our Handler.as file
 		NOTICE THAT ALL HANDLERS ARE SENDED ALL AT ONE TIME, this helps to avoid lags
 		
 		
+		THE JAVA SIDE:
+		
+		
+	public void getUsers() {
+	
+		params.put("users", Data.users);
+        params.put("notPlayingUsers", Data.getNotPlayingClients());
+		handler.put("_params", params.toString());
+		data.addHandler(handler);
+	
+	}
+	
+	public void connect() {
+		System.out.println(params);
+		Long user_id = params.getLong("userId");
+                System.out.println("user connected and his user_id = " + user_id);
+                Boolean alreadyExist = false;
+                
+                for(int i = 0; i < Data.getClients().size(); i++)
+                {
+                    Client client = Data.getClient(i);
+                    if(user_id == client.id)
+                    {
+                        alreadyExist = true;
+                        break;
+                    }
+                }
+                
+		if(Data.db.exists("SELECT * FROM sillaru_users WHERE id = " + user_id))
+		{
+                    if(!alreadyExist)
+                    {
+                        client.id = user_id;
+						JSONObject user = Data.db.executeQuery("SELECT * FROM users WHERE id = " + user_id, true);
+						Data.db.executeUpdate("UPDATE sillaru_users SET online = 1 WHERE id = " + user_id); 
+						params.put("users", Data.users);
+						params.put("user", user);
+						params.put("userId", user.getInt("id"));
+						handler.put("_params", params.toString());
+						data.addHandler(handler);
+                    }
+                    else  
+                    {
+						System.out.println("user exist, but already logged");
+                    }
+            }
+			else
+			{
+						
+				System.out.println("user doesn't exist");
+			}
+                
+        }
+		
 		---------------------------------------------------------------------------------
 		
 		You can edit the PING of the data in the Client.java where Thread.sleep(100) - is by default
